@@ -1,74 +1,189 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的个人介绍</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermes 本地部署与 GPT-Image-2 测试汇报</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page">
-    <header class="hero">
-     <img src="avatar.png" alt="我的头像" class="avatar">
-      <div class="hero-text">
-        <p class="tag">Hello, 我是</p>
-        <h1>李四</h1>
-        <p class="intro">
-         我是一名前端开发求职者，正在系统学习 HTML、CSS、JavaScript 等网页开发技术。
-      我喜欢把想法落地成网页，也在不断通过练习项目提升自己的代码能力和页面实现能力。
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="button primary">联系我</a>
-          <a href="#projects" class="button secondary">看作品</a>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <div>
+          <div class="eyebrow">AI 工具阶段性汇报</div>
+          <div class="brand-title">Hermes × GPT-Image-2</div>
         </div>
       </div>
+      <nav class="nav">
+        <a href="#overview">概览</a>
+        <a href="#hermes">Hermes</a>
+        <a href="#gpt-image">GPT-Image-2</a>
+        <a href="#conclusion">结论</a>
+      </nav>
     </header>
 
     <main>
-      <section class="card">
-        <h2>关于我</h2>
-        <p>
-         我目前正在寻找前端开发相关的工作机会，期望从初级前端开发岗位做起。
-    在学习过程中，我完成了个人介绍页、登录页、静态展示页等练习项目，
-    对网页结构搭建、页面样式编写和基础交互实现有一定理解。
-    我希望进入实际项目环境中继续成长，积累开发经验，并不断提升自己的技术能力
-        </p>
-      </section>
-
-      <section class="card">
-        <h2>我的技能</h2>
-        <div class="chips">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>网页排版</span>
-          <span>基础设计</span>
+      <section class="hero" id="overview">
+        <div class="hero-copy">
+          <div class="eyebrow accent">本地 Agent 落地 + 营销图生成测试</div>
+          <h1>Hermes 本地部署与<br />GPT-Image-2 测试结果</h1>
+          <p class="hero-desc">
+            本轮内容聚焦两件事：一是 Hermes 在本地与多端环境中的落地验证；
+            二是 GPT-Image-2 从白底产品图到营销页面的生成质量评估。
+          </p>
+          <div class="hero-tags">
+            <span>本地部署已验证</span>
+            <span>营销图初稿可用</span>
+            <span>正式交付仍需人工</span>
+          </div>
         </div>
-      </section>
-
-      <section class="card" id="projects">
-        <h2>我的项目</h2>
-        <div class="project-list">
-          <article class="project">
-            <h3>个人介绍网页</h3>
-            <p>这是我的第一个网页项目，用来展示个人信息和学习成果。</p>
+        <div class="hero-panel card hero-grid">
+          <article class="preview-block tall">
+            <div class="preview-label">Hermes 管理面板</div>
+            <img src="assets/hermes-dashboard.jpg" alt="Hermes 管理面板" />
           </article>
-          <article class="project">
-            <h3>待完成的小作品</h3>
-            <p>这里以后可以放你的练习项目，比如登录页、博客页、作品展示页。</p>
+          <article class="preview-block">
+            <div class="preview-label">GPT-Image-2 绿色风格输出</div>
+            <img src="assets/gpt-output-green.jpg" alt="GPT-Image-2 绿色风格输出" />
+          </article>
+          <article class="preview-block">
+            <div class="preview-label">GPT-Image-2 蓝色风格输出</div>
+            <img src="assets/gpt-output-blue.jpg" alt="GPT-Image-2 蓝色风格输出" />
           </article>
         </div>
       </section>
 
-      <section class="card" id="contact">
-        <h2>联系我</h2>
-        <ul class="contact-list">
-          <li>邮箱：yourname@email.com</li>
-          <li>GitHub：github.com/yourname</li>
-          <li>微信：你的微信号</li>
-        </ul>
+      <section class="section" id="hermes">
+        <div class="section-head">
+          <div class="eyebrow">01 · Hermes 本地部署</div>
+          <h2>本地部署已完成，已跑通控制台、CLI 与飞书回复链路</h2>
+          <p>
+            这部分重点不是“展示安装过程”，而是呈现已经打通的实际形态：管理面板可用、CLI 可运行、飞书侧可正常响应。
+          </p>
+        </div>
+        <div class="grid hermes-layout">
+          <div class="stack">
+            <article class="info-card blue">
+              <h3>当前进展</h3>
+              <p>已完成 Hermes 本地部署与基础使用验证，确认 Agent 在本地环境运行可行，并且可接入多端消息场景。</p>
+            </article>
+            <article class="info-card green">
+              <h3>当前价值</h3>
+              <p>核心价值不只是本地运行，而是已经具备连接面板、终端工作流和飞书回复能力的基础，后续可继续扩展自动化链路。</p>
+            </article>
+            <article class="info-card orange compact">
+              <h3>下一阶段重点</h3>
+              <p>继续围绕消息联动、自动化任务和跨平台通知进行真实流程验证。</p>
+            </article>
+          </div>
+          <div class="image-mosaic hermes-mosaic">
+            <article class="visual-card card wide">
+              <div class="panel-caption">管理面板</div>
+              <img src="assets/hermes-dashboard.jpg" alt="Hermes 管理面板截图" />
+            </article>
+            <article class="visual-card card half">
+              <div class="panel-caption">CLI 启动界面</div>
+              <img src="assets/hermes-cli.jpg" alt="Hermes CLI 界面截图" />
+            </article>
+            <article class="visual-card card half">
+              <div class="panel-caption">飞书对话回复</div>
+              <img src="assets/hermes-feishu.jpg" alt="Hermes 在飞书中的回复截图" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gpt-image">
+        <div class="section-head">
+          <div class="eyebrow">02 · GPT-Image-2 测试结果</div>
+          <h2>从单张白底产品图生成完整营销页，适合创意初稿阶段</h2>
+          <p>
+            这里按真实流程展示：输入素材 → 图片入口 → 两版输出结果。这样能更直观地说明模型已经能完成从产品图到营销版面的扩展。
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-card card">
+            <div class="panel-caption">输入图</div>
+            <img src="assets/product-input.jpg" alt="白底产品图输入" />
+            <div class="workflow-text">
+              <h3>输入素材</h3>
+              <p>单张白底产品图，主要测试模型能否自动补全卖点、场景与版式结构。</p>
+            </div>
+          </article>
+          <article class="workflow-card card entry-card">
+            <div class="panel-caption">ChatGPT 图片入口</div>
+            <img src="assets/chatgpt-image-entry.jpg" alt="ChatGPT 图片入口截图" />
+            <div class="workflow-text">
+              <h3>生成入口</h3>
+              <p>通过 ChatGPT 的“更多 → 图片”进入图片生成流程，作为本次测试入口。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="results-grid">
+          <article class="visual-card card result-card">
+            <div class="panel-caption">输出结果 A</div>
+            <img src="assets/gpt-output-green.jpg" alt="GPT-Image-2 绿色版营销图输出" />
+          </article>
+          <article class="visual-card card result-card">
+            <div class="panel-caption">输出结果 B</div>
+            <img src="assets/gpt-output-blue.jpg" alt="GPT-Image-2 蓝色版营销图输出" />
+          </article>
+        </div>
+
+        <div class="summary-grid trio">
+          <article class="info-card blue">
+            <h3>测试方式</h3>
+            <p>输入为单张白底产品图，输出为完整营销页，重点考察版式补全、卖点组织和视觉完成度。</p>
+          </article>
+          <article class="info-card green">
+            <h3>优势</h3>
+            <p>能较快延展出完整的 A+ 风格页面，自动补充场景、卖点模块和版式，适合前期提案与创意探索。</p>
+          </article>
+          <article class="info-card orange">
+            <h3>局限与结论</h3>
+            <p>产品一致性与文字准确率仍有限，高精度控制场景尚不稳定。更适合作为营销初稿工具，不建议直接替代正式商用交付。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="conclusion">
+        <div class="section-head narrow">
+          <div class="eyebrow">03 · 总结</div>
+          <h2>整体判断与应用方向</h2>
+          <p>两项能力都已具备继续推进的基础，但更适合先服务于提效、探索与前期生产，而不是直接替代最终交付。</p>
+        </div>
+        <div class="summary-grid">
+          <article class="info-card blue">
+            <h3>关于 Hermes</h3>
+            <p>本地部署已验证可行，且已能在控制台、CLI 和飞书侧形成可见成果，下一阶段应继续围绕工作流接入验证实际收益。</p>
+          </article>
+          <article class="info-card green">
+            <h3>关于 GPT-Image-2</h3>
+            <p>已具备较强的营销图初稿生成能力，适合创意提案、版式探索和前期视觉草稿。</p>
+          </article>
+          <article class="info-card orange list-card">
+            <h3>应用原则</h3>
+            <ul>
+              <li>优先用于低风险、可快速迭代的场景</li>
+              <li>把 AI 作为提效工具和前期生产工具</li>
+              <li>正式交付仍保留人工审核与精修环节</li>
+            </ul>
+          </article>
+        </div>
+        <div class="final-banner">
+          <span>最终结论</span>
+          <strong>当前更适合把这些能力用于提效和前期探索，而不是直接替代最终交付。</strong>
+        </div>
       </section>
     </main>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
